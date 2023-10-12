@@ -11,7 +11,27 @@ public class ProcessoSeletivo {
 
         selecaoCandidato();
 
+        imprimirSelecionados();
+
     }
+
+    static void imprimirSelecionados(){
+        String [] candidatosSelecionados = {"FELIPE","MÁRCIA","JULIA","PAULO","AUGUSTO"};
+		
+		System.out.println("Imprimindo com a ordem de seleção pelo índice");
+		for(int x = 0; x < candidatosSelecionados.length; x++) {
+			System.out.println((x + 1)+ "° Candidato é " + candidatosSelecionados [x] );
+		}
+		
+        //forma abrevida
+		System.out.println("Imprimindo todos sem a necessidade de exibir o índice");
+		
+		for(String candidato: candidatosSelecionados) {
+			System.out.println(candidato);
+		}
+
+    }
+
 
     static void selecaoCandidato(){
         String [] candidatos = {
@@ -42,8 +62,6 @@ public class ProcessoSeletivo {
             candidatosAtual++;
         }
     }
-
-    // Método que simula o valor pretendido
 
     static double valorPretendido() {
         return ThreadLocalRandom.current().nextDouble(1600, 2200);
